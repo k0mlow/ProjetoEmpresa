@@ -7,9 +7,13 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-require('dotenv/config');
+
 const mongoose = require("mongoose");
-mongoose.connect(process.env.Mongo_URI);
+
+require('dotenv/config');
+
+mongoose.connect(process.env.MONGO_URI);
+
 const FuncionarioModel = require("./models/funcionarioModel");
 const SetorModel = require("./models/setorModel");
 const UsuarioModel = require("./models/usuarioModel");
