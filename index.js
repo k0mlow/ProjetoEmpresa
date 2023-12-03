@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 require('dotenv/config');
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MongoDB);
+mongoose.connect(process.env.Mongo_URI);
 const FuncionarioModel = require("./models/funcionarioModel");
 const SetorModel = require("./models/setorModel");
 const UsuarioModel = require("./models/usuarioModel");
