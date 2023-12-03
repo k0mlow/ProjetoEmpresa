@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+  <style>
+    .navbar-brand img {
+      max-width: 133px;
+      max-height: 100px;
+      width: auto;
+      height: auto;
+    }
+
+    .btn-end {
+      text-align: right;
+
+
+    }
+  </style>
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="/">
+      <img src="https://pbs.twimg.com/media/F8Bx_K4WsAAanW0?format=png&name=small">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastrar
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/funcionario/cadastrar">Cadastrar Funcionário</a></li>
+            <li><a class="dropdown-item" href="/setor/cadastrar">Cadastrar setor</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Listar
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../funcionario">Listar Funcionário</a></li>
+            <li><a class="dropdown-item" href="../setor">Listar setor</a></li>
+            <li><a class="dropdown-item" href="../usuario">Listar usuario</a></li>
+          </ul>
+        </li>
+
+
+
+      </ul>
+
+    </div>
+    <li class="btn-end"><a role="button" class="btn btn-secondary btn-sm" href="/logout">Sair</a></li>
+  </div>
+</nav>

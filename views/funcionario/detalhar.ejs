@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include ("../partials/cabecalho.ejs") %>
+</head>
+
+<body>
+    <div>
+        Funcionario <%=funcionario.id %>
+            <b>Nome:</b>
+            <%= funcionario.nome %>
+                <b>idade:</b>
+                <%= funcionario.idade %>
+                    <b>idade:</b>
+                    <%= funcionario.setor %>
+    </div>
+    <a class="btn btn-secondary" href="/">Voltar</a>
+
+</body>
+<%- include ("../partials/rodape.ejs") %>
+
+</html>

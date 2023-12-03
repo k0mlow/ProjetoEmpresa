@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include ("../partials/cabecalho.ejs") %>
+</head>
+
+<body>
+    <div class="container margem caixilha">
+        <br>
+        <h3>Editar informações do setor <%= setor.nome %> id <%=setor.id %>
+        </h3>
+        <br>
+        <form action="/setor/atualizar/" method="POST">
+            <input type="hidden" name="_id" value="<%= setor._id%>">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">ID</label>
+                <input readonly="readonly" value='<%= setor.id %>' type="text" required name="id" class="form-control"
+                    id="id">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">NOME</label>
+                <input value='<%= setor.nome %>' type="text" required name="nome" class="form-control" id="nome">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Funcionarios</label>
+                <input value='<%= setor.funcionarios %>' type="text" required name="funcionarios" class="form-control"
+                    id="funcionarios">
+            </div>
+            <button type="submit" class="btn btn-primary">Editar</button>
+            <a href="/">
+                <button type="button" class="btn btn-secondary">Voltar</button>
+              </a>
+    </div>
+    </form>
+</body>
+
+<%- include ("../partials/rodape.ejs") %>
+
+</html>

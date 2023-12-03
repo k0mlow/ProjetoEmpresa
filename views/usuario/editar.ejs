@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="container margem caixilha">
+        <% if(status==1) {%>
+            <div style="background-color: rgb(233, 15, 15)">
+                Email ja cadatrado
+            </div>
+            <% } %>
+                <br>
+                <h3>Editar informações do usuario <%= usuario.nome %> id <%=usuario.id %>
+                </h3>
+                <br>
+                <form action="/usuario/atualizar/" method="POST">
+                    <input type="hidden" name="_id" value="<%= usuario._id%>">
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">ID</label>
+                        <input readonly="readonly" value='<%= usuario._id %>' type="text" required name="_id"
+                            class="form-control" id="id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Nome</label>
+                        <input value='<%= usuario.nome %>' type="text" required name="nome" class="form-control"
+                            id="nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Email</label>
+                        <input value='<%= usuario.email %>' type="text" required name="email" class="form-control"
+                            id="email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <a href="/">
+                        <button type="button" class="btn btn-secondary">Voltar</button>
+                    </a>
+    </div>
+    </form>
+</body>
+
+<%- include ("../partials/rodape.ejs") %>
+
+</html>

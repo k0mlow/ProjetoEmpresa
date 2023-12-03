@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include ("../partials/cabecalho.ejs") %>
+</head>
+
+<body>
+
+    <div class="container margem">
+        <% if(status==1) {%>
+            <div style="background-color: lightgreen">
+                Setor cadastrado com sucesso
+            </div>
+            <% } %>
+                <% if( status==2) {%>
+                    <div style="background-color: lightcoral">
+                        Setor removido com sucesso
+                    </div>
+                    <% } %>
+                        <% if( status==3) {%>
+                            <div style="background-color: rgb(99, 199, 245)">
+                                Cliente atualizado com sucesso
+                            </div>
+                            <% } %>
+
+
+
+                                <table class="table table-striped">
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>funcionarios</th>
+                                    <th>Detalhar</th>
+                                    <th>Remover</th>
+                                    <th>Editar</th>
+                                    <% for(const setor of vetorSetor) { %>
+                                        <tr>
+                                            <td>
+                                                <%= setor.id %>
+                                            </td>
+                                            <td>
+                                                <%= setor.nome %>
+                                            </td>
+                                            <td>
+                                                <%= setor.funcionarios %>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-warning" href="/setor/ <%= setor.id %>">Detalhar</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger" href="/setor/remover/ <%= setor.id %>"
+                                                    onclick="return confirm('Tem certeza que deseja remover?')">Remover</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-primary"
+                                                    href="/setor/editar/<%= setor.id %>">Editar</a>
+                                            </td>
+                                        </tr>
+                                        <%} %>
+                                </table>
+                                <a href="/">
+                                    <input type="button" class="btn btn-secondary" value="Voltar" />
+                                </a>
+    </div>
+
+
+    </table>
+
+</body>
+
+<%- include ("../partials/rodape.ejs") %>
+
+</html>
