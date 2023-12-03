@@ -1,7 +1,5 @@
 const { VERSION } = require('ejs');
-const dotenv = require("dotenv");
 
-dotenv.config();
 const express = require('express');
 
 const res = require('express/lib/response');
@@ -9,7 +7,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
+require('dotenv/config');
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MongoDB);
 const FuncionarioModel = require("./models/funcionarioModel");
