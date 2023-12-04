@@ -56,7 +56,7 @@ app.get("/logout", function (req, res) {
     res.redirect("/usuarios/login");
 });
 
-app.listen(process.env.porta, function () {
+app.listen(process.env.PORT, function () {
     console.log("Rodando");
 })
 
